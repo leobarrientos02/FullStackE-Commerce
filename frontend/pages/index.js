@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Product from "../components/Products";
+import { Gallery } from "../styles/Gallery";
 
 export default function Home() {
   // Fetch the products from strapi
@@ -28,9 +29,11 @@ export default function Home() {
       <main>
         <h1>Hello, NEXT</h1>
         {/* <Link href={"/about"}>About</Link> */}
-        {products.map((product) => (
-          <Product key={product.attributes.slug} product={product} /> // product={product} passes to child component
-        ))}
+        <Gallery>
+          {products.map((product) => (
+            <Product key={product.attributes.slug} product={product} /> // product={product} passes to child component
+          ))}
+        </Gallery>
       </main>
     </div>
   );
