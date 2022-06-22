@@ -6,6 +6,10 @@ export const DetailStyle = styled.div`
     margin-top: 5rem;
     img{
         width: 40%;
+        height: 22rem;
+        object-fit: contain;
+        padding: 2rem;
+        background: white;
     }
 `;
 
