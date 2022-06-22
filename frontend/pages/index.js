@@ -17,7 +17,7 @@ export default function Home() {
   // Get Products out API Call
   const products = data.products.data;
 
-  console.log(products);
+  // console.log(products);
   return (
     <div>
       <Head children={undefined}>
@@ -27,8 +27,6 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Hello, NEXT</h1>
-        {/* <Link href={"/about"}>About</Link> */}
         <Gallery>
           {products.map((product) => (
             <Product key={product.attributes.slug} product={product} /> // product={product} passes to child component
