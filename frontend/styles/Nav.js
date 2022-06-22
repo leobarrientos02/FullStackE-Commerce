@@ -34,4 +34,20 @@ export const NavItems = styled.div`
     svg{
         font-size: 1.25rem;
     }
+
+    span{
+        background: #ff2626;
+        color: white;
+        width: 1.3rem;
+        height: 1.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 0.75rem;
+        position: absolute;
+        right: -10%;
+        top: -20%;
+        pointer-events: none;
+    }
 `;

@@ -1,11 +1,11 @@
 import { useStateContext } from "../lib/context";
-import { CartWrapper, CartStyle, Card, CardInfo, EmptyStyle} from "../styles/CartStyles";
+import { CartWrapper, CartStyle, Card, CardInfo, EmptyStyle, Checkout } from "../styles/CartStyles";
 import { FaShoppingCart } from "react-icons/fa"
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { Quantity } from "../styles/ProductDetails";
 
 export default function Cart(){
-    const { cartItems, setShowCart, onAdd, onRemove } = useStateContext();
+    const { cartItems, setShowCart, onAdd, onRemove, totalPrice } = useStateContext();
 
     return(
         <CartWrapper onClick={() => setShowCart(false)}>
@@ -40,6 +40,12 @@ export default function Cart(){
                         );
                     })
                 }
+                {cartItems.length >= 1 && (
+                    <Checkout>
+                        <h3>Subtotal: ${totalPrice.toFixed(2)}</h3>
+                        <button>Purchase</button>
+                    </Checkout>
+                )}
             </CartStyle>
         </CartWrapper>
     );
