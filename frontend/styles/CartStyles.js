@@ -10,6 +10,7 @@ export const CartWrapper = styled.div`
     z-index: 50;
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
     /* display: none; */
 `;
 
@@ -31,7 +32,7 @@ export const Card = styled.div`
     padding: 2rem;
     margin: 2rem 0rem;
     img{
-        width: 8rem;
+        width: 6rem;
         height: 6rem;
         object-fit: contain;
     }
@@ -70,5 +71,5 @@ export const EmptyStyle = styled.div`
 `;
 
 export const Quantity = styled.div`
-    
+
 `;

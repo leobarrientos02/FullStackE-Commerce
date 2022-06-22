@@ -2,18 +2,20 @@ import Link from "next/link";
 import { FiShoppingBag } from "react-icons/fi";
 import { NavStyles, NavItems } from "../styles/Nav";
 import Cart from "./Cart";
+import { useStateContext } from "../lib/context";
 
 export default function Nav(){
+    const {showCart, setShowCart} = useStateContext();
     return(
         <NavStyles>
             <Link href={'/'}>Tech.</Link>
             <NavItems>
-                <div>
+                <div onClick={() => setShowCart(true)} title="View Cart">
                     <FiShoppingBag />
                     <h3>Cart</h3>
                 </div>
             </NavItems>
-            <Cart />
+            {showCart && <Cart /> }
         </NavStyles>
     );
 }

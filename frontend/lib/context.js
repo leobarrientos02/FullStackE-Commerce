@@ -38,6 +38,22 @@ export const StateContext = ({ children }) => {
         }
     };
 
+    const onRemove = (product) => {
+        // Check if the product is already in the cart
+        const exist = cartItems.find(item => item.slug === product.slug); // Slug is the id
+        if(exist.quantity === 1){
+            setCartItems(cartItems.filter((item) => item.slug !== product.slug))
+        }else{
+            setCartItems(
+                cartItems.map(item =>
+                    item.slug === product.slug 
+                        ? {...exist, quantity: exist.quantity - 1}
+                        : item
+                )
+            );
+        }
+    }
+
     return(
         <ShopContext.Provider 
             value={{ 
@@ -48,7 +64,8 @@ export const StateContext = ({ children }) => {
                 setShowCart,
                 cartItems, 
                 setCartItems,
-                onAdd
+                onAdd,
+                onRemove,
             }}
         >
             {children}
