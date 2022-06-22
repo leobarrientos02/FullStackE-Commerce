@@ -80,3 +80,4 @@ export const Checkout = styled(motion.div)`
     }
 `;
 
+export const Cards = styled(motion.div)``;
