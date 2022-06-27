@@ -1,14 +1,15 @@
 import { useQuery } from "urql";
-import { GET_PRODUCT_QUERY } from "../lib/query";
+import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useRouter } from "next/router";
 import {
   DetailStyle,
   ProductInfo,
   Quantity,
   Buy,
-} from "../styles/ProductDetails";
+} from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
-import { useStateContext } from "../lib/context";
+import { useStateContext } from "../../lib/context";
+import Loading from "../../components/Loading";
 
 export default function ProductDetails() {
   // Use State
@@ -26,7 +27,7 @@ export default function ProductDetails() {
   const { data, fetching, error } = results;
 
   // Check for the data coming in
-  if (fetching) return <p>Loading...</p>;
+  if (fetching) return <Loading />;
   if (error) return <p>Oh no... {error.message}</p>;
 
   // console.log(data);
