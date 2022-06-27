@@ -4,6 +4,7 @@ import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Product from "../components/Products";
 import { Gallery } from "../styles/Gallery";
+import Loading  from "../components/Loading";
 
 export default function Home() {
   // Fetch the products from strapi
@@ -11,7 +12,7 @@ export default function Home() {
   const { data, fetching, error } = results;
 
   // Check for the data coming in
-  if (fetching) return <p>Loading...</p>;
+  if (fetching) return <Loading />;
   if (error) return <p>Oh no... {error.message}</p>;
 
   // Get Products out API Call

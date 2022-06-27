@@ -1,14 +1,14 @@
 import { useQuery } from "urql";
-import { GET_PRODUCT_QUERY } from "../../lib/query";
+import { GET_PRODUCT_QUERY } from "../lib/query";
 import { useRouter } from "next/router";
 import {
   DetailStyle,
   ProductInfo,
   Quantity,
   Buy,
-} from "../../styles/ProductDetails";
+} from "../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
-import { useStateContext } from "../../lib/context";
+import { useStateContext } from "../lib/context";
 
 export default function ProductDetails() {
   // Use State
