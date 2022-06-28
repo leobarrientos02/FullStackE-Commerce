@@ -34,16 +34,18 @@ export default function Cart() {
   const { cartItems, setShowCart, onAdd, onRemove, totalPrice } =
     useStateContext();
 
-  // Payment
+  //Payment
   const handleCheckout = async () => {
-    const stripe = await getStripe();
-    const response = await fetch("api/stripe", {
+    const stripePromise = await getStripe();
+    const response = await fetch("/api/stripe", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(cartItems),
     });
     const data = await response.json();
-    await stripe.redirectToCheckout({ sessionId: data.id });
+    await stripePromise.redirectToCheckout({ sessionId: data.id });
   };
 
   return (
