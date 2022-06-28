@@ -83,7 +83,7 @@ export default function Cart() {
                   />
                   <CardInfo>
                     <h3>{item.title}</h3>
-                    <h3>${item.price.toFixed(2)}</h3>
+                    <h3>${item.price}</h3>
                     <Quantity>
                       <span>Quantity</span>
                       <button onClick={() => onRemove(item)}>
