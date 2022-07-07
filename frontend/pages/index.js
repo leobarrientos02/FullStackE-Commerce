@@ -21,7 +21,7 @@ export default function Home() {
   // console.log(products);
   return (
     <div>
-      <Head children={undefined}>
+      <Head>
         <title>Apple Tech</title>
         <meta name="description" content="Buy the latest and hottest Apple products for the lowest price you can find on the market. If you can find a cheaper price, we will negotiate a new price to ensure we always offer the lowest price." />
         <link rel="icon" href="/favicon.ico" />
