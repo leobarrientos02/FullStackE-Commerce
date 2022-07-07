@@ -1,5 +1,6 @@
 import { ProductStyle } from "../styles/ProductStyle";
 import Link from "next/link";
+import formatMoney from "../lib/formatMoney";
 
 export default function Product({ product }) {
   // Product is passed down from index.js
@@ -13,7 +14,7 @@ export default function Product({ product }) {
         </div>
       </Link>
       <h2>{title}</h2>
-      <h3>${price.toFixed(2)}</h3>
+      <h3>${ price }</h3>
     </ProductStyle>
   );
 }

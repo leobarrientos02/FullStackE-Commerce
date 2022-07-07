@@ -31,13 +31,14 @@ export default function ProductDetails() {
   if (error) return <p>Oh no... {error.message}</p>;
 
   // console.log(data);
-  const { title, description, image } = data.products.data[0].attributes;
+  const { title, description, image, price } = data.products.data[0].attributes;
 
   return (
     <DetailStyle>
       <img src={image.data.attributes.formats.small.url} alt={title} />
       <ProductInfo>
         <h1>{title}</h1>
+        <h3>${price}</h3>
         <p>{description}</p>
         <Quantity>
           <span>Quantity</span>
